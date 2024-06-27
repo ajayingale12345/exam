@@ -1,0 +1,26 @@
+<mat-card class="mt10 mr20 ml20 "  *ngFor="let q of quizes" style="margin-top: 50px; margin-left: 250px; margin-right: 250px; background-color: azure;"> 
+<mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+        {{q.title}}
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{q.catagory.title}}
+    </mat-card-subtitle>
+   
+</mat-card-header> 
+<mat-card-content>{{q.description}}</mat-card-content>   
+<mat-card-actions>
+    <button mat-flat-button color="accent" class="ml20" [routerLink]="'/admin/view-questions/'+q.qid +'/'+q.title">Questions</button>
+    <button mat-stroked-button color="accent" class="ml20">maxMarks{{q.maxMarks}}</button>
+    <button mat-stroked-button color="success" class="ml20">questions{{q.numberOfQuestions}}</button>
+    <button mat-flat-button color="warn" class="ml20" [routerLink]="'/admin/quize/'+q.qid">update</button> &nbsp;
+    <button mat-flat-button color="accent" class="ml20 mr20" > Attempts</button> &nbsp;
+    <button mat-flat-button color="warn" class="ml20 mr20" (click)="deleteQuize(q.qid)"> DeleteQuize </button>
+    
+</mat-card-actions>
+
+</mat-card>
+<div class="container text-center mt20 ">
+<button mat-raised-button color="primary" routerLink="/admin/add-quize">Add new Quize</button>
+</div>

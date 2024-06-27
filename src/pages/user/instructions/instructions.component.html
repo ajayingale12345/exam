@@ -1,0 +1,61 @@
+<div class="boottsrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Read the Instrauctions Carefully
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            One step more to go....
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="ml20">
+                 <h3>{{quize.title}}</h3>
+                 <p>{{quize.description}}</p>
+                 <mat-divider></mat-divider>
+                 <h1>Important Instructions</h1>
+                   <ul>
+                       <li>This is quize is only for the Practive Purpose</li>
+                       <li>You have to submit quize within  time.
+                        <b>{{quize.numberOfQuestions*2 }} Minutes</b> </li>
+                        <li>There Are <b>{{quize.numberOfQuestions}} Questions</b>  in this quize</li>
+                        <li>Each Qustion carries 
+                            <b>{{quize.maxMarks/quize.numberOfQuestions}} Marks</b>
+                             no negative Marking for Wrong Qusestions
+                        </li>
+                        <li>All the questions is of MCQ types</li>
+                   </ul>
+                   <mat-divider></mat-divider>
+                    <br/>
+                      <h1>Attempting the Quize</h1>
+                      <ul>
+                          <li>
+                              click <b>Start Quize</b> button to start the quize
+                          </li>
+                          <li>
+                              The time will start the moment  you click on the Start button
+                          </li>
+                          <li>
+                              you can not resume this quize if interrupted due to any reasons
+                          </li>
+                          <li>Scroll down  to ove on the next question</li>
+                          <li>
+                              click on submit quize button on completion of the quize
+                          </li>
+                          <li>
+                              report of the test will be automatically generated in the form of pdf copy
+                          </li>
+                      </ul>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <button (click)="startQuize()"  mat-raised-button color="primary">Start Quize</button>
+                    </mat-card-actions>
+
+                  
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

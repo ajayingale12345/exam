@@ -1,0 +1,68 @@
+ <div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-6 offset-md-3">
+
+        <div class="container text-center">
+          <img class="logo-img" src="../../assets/ExamLogo.jfif" alt="">
+        </div>
+        <h1 class="text-center">Register Here</h1>
+        <form (ngSubmit)="formSubmit()">
+        
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>User Name</mat-label>
+            <input [(ngModel)]="user.username" name="userName" matInput placeholder="Placeholder" required>
+
+            <mat-hint>Username Must be unique</mat-hint>
+          </mat-form-field>
+        
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>User Password</mat-label>
+
+            <input [(ngModel)]="user.password" name="password" matInput placeholder required type="password"
+              placeholder="Placeholder" matInput placeholder="Placeholder">
+            <mat-hint>E</mat-hint>
+          </mat-form-field>
+        
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>First Name Password</mat-label>
+            <input [(ngModel)]="user.firstName" name="firstName" placeholder="Placeholder" required matInput
+              placeholder="Placeholder">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+         
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Last Name </mat-label>
+            <input [(ngModel)]="user.lastName" name="lastName" placeholder="Placeholder" required matInput
+              placeholder="Placeholder">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+       
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email </mat-label>
+            <input [(ngModel)]="user.email" name="email" type="email" required matInput placeholder="Placeholder">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Phone Number </mat-label>
+            <input [(ngModel)]="user.phone" name="phone" required placeholder="Placeholder" matInput
+              placeholder="Placeholder">
+
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+
+
+
+          <div class="container text-center">
+            <button type="submit" mat-raised-button color="primary">Submit</button>
+            <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Reset</button>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 
+ l
