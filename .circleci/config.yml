@@ -18,7 +18,7 @@ jobs:
       # Build Angular app
       - run:
           name: Build Angular project
-          command: npm run build --prod
+          command: npm run build 
 
       # Set up Docker
       - setup_remote_docker
