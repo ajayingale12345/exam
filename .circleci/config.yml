@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker build -t $DOCKERHUB_USERNAME/angular-app:$CIRCLE_SHA1 .
+            docker build -t ajayin/angular-app:$CIRCLE_SHA1 .
 
       # Log in to Docker Hub
       - run:
@@ -40,7 +40,7 @@ jobs:
       - run:
           name: Push Docker image to Docker Hub
           command: |
-            docker push $DOCKERHUB_USERNAME/angular-app:$CIRCLE_SHA1
+            docker push ajayin/angular-app:$CIRCLE_SHA1
 
 workflows:
   version: 2
