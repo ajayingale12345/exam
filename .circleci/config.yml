@@ -1,0 +1,49 @@
+version: 2.1
+
+jobs:
+  build_docker_image:
+    docker:
+      - image: cimg/node:20.5.0  
+    
+    steps:
+      - checkout
+      - run:
+          name: check
+          command: ls
+      # Install dependencies
+      - run:
+          name: Install Angular dependencies
+          command: npm install
+
+      # Build Angular app
+      - run:
+          name: Build Angular project
+          command: npm run build 
+
+      # Set up Docker
+      - setup_remote_docker
+         
+
+      # Build Docker image
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t ajayin/angular-app:$CIRCLE_SHA1 .
+
+      # Log in to Docker Hub
+      - run:
+          name: Log in to Docker Hub
+          command: |
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+
+      # Push Docker image to Docker Hub
+      - run:
+          name: Push Docker image to Docker Hub
+          command: |
+            docker push ajayin/angular-app:$CIRCLE_SHA1
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build_docker_image
