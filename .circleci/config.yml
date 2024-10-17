@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build_docker_image:
     docker:
-      - image: cimg/node:23.0.0  # Node image for building the Angular project
+      - image: cimg/node:20.5.0  # Node image for building the Angular project
     
     steps:
       - checkout
